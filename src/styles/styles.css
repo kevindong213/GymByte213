@@ -1,0 +1,25 @@
+.title-image {
+    display: flex;
+    align-items: center;
+}
+
+.title-image h1 {
+    margin-left: 20px;
+    font-size: 3em;
+}
+
+.list-disc-bullets {
+    list-style-type: disc;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.list-header {
+    margin-bottom: 0px;
+}
+
+.list-no-top-margin {
+    margin-top: 0px;
+}
