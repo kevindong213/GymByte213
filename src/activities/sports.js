@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import basketballGif from '../img/basketball.gif';
 import soccerGif from '../img/soccer.gif';
 import volleyballGif from '../img/volleyball.gif';
@@ -8,7 +8,6 @@ export function Sports() {
     const [minutes, setMinutes] = useState("");
     const [sport, setSports] = useState("basketball");
 
-    const [caloriesBurned, setCaloriesBurned] = useState("");
     const [summary, setSummary] = useState("");
 
     const sportGif = {
@@ -24,16 +23,9 @@ export function Sports() {
     }
 
 
-    useEffect(() => {
-        setCaloriesBurned(sportCalories[sport] * minutes);
-    }, [minutes, sport]);
-
-
     function getSummary() {
-        return `Today you spent ${minutes} minutes playing ${sport}.`
-    }
+        const caloriesBurned = sportCalories[sport] * minutes;
 
-    function getSummary() {
         return (
             <div>
                 <p>{getTodaysDate()}</p>

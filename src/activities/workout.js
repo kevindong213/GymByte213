@@ -4,43 +4,24 @@ import BenchPress from '../workouts/benchPress';
 import LegPress from '../workouts/backSquat';
 
 export function Workout() {
-    const [treadmillToggle, setTreadmillToggle] = useState(true);
-    const [benchPressToggle, setBenchPressToggle] = useState(false);
-    const [legPressToggle, setLegPressToggle] = useState(false);
+    const [selectedWorkout, setSelectedWorkout] = useState("treadmill");
 
-    function updateToggle(event) {
-        switch (event.target.value) {
-            case "treadmill":
-                setTreadmillToggle(true);
-                setBenchPressToggle(false);
-                setLegPressToggle(false);
-                break;
-            case "benchPress":
-                setTreadmillToggle(false);
-                setBenchPressToggle(true);
-                setLegPressToggle(false);
-                break;
-            case "legPress":
-                setTreadmillToggle(false);
-                setBenchPressToggle(false);
-                setLegPressToggle(true);
-                break;
-            default:
-        }
+    const workoutComponent = {
+        "treadmill": <Treadmill />,
+        "benchPress": <BenchPress />,
+        "legPress": <LegPress />
     };
+
 
     return (
         <div>
-            <select name="exercises" onChange={updateToggle}>
+            <select name="exercises" onChange={e => setSelectedWorkout(e.target.value)}>
                 <option value="treadmill">treadmill</option>
                 <option value="benchPress">bench press</option>
                 <option value="legPress">back squat</option>
             </select>
 
-            {treadmillToggle && <Treadmill />}
-            {benchPressToggle && <BenchPress />}
-            {legPressToggle && <LegPress />}
-
+            {workoutComponent[selectedWorkout]}
         </div>
     );
 }

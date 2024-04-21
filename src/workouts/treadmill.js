@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import treadmillGif from '../img/treadmill.gif';
 import { getTodaysDate } from '../Home';
 
@@ -7,20 +7,12 @@ export function Treadmill() {
     const [incline, setIncline] = useState("");
     const [minutes, setMinutes] = useState("");
 
-    const [caloriesBurned, setCaloriesBurned] = useState("");
     const [summary, setSummary] = useState("");
 
 
-    useEffect(() => {
-        setCaloriesBurned(0);
-    }, [speed, incline, minutes]);
-
-
     function getSummary() {
-        return `Today you spent ${minutes} minutes on the treadmill at ${speed} mi/hr at ${incline} degrees.`
-    }
+        const caloriesBurned = 0; // FIXME
 
-    function getSummary() {
         return (
             <div>
                 <p>{getTodaysDate()}</p>

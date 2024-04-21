@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import benchPressGif from '../img/benchpress.gif';
 import { getTodaysDate } from '../Home';
 
@@ -6,17 +6,13 @@ export function BenchPress() {
     const [weight, setWeight] = useState("");
     const [reps, setReps] = useState("");
     const [sets, setSets] = useState("");
-    const [caloriesBurned, setCaloriesBurned] = useState("");
 
     const [summary, setSummary] = useState("");
 
 
-    useEffect(() => {
-        setCaloriesBurned(weight / 150 * 5 * reps * sets);
-    }, [weight, reps, sets]);
-
-
     function getSummary() {
+        const caloriesBurned = weight / 150 * 5 * reps * sets;
+
         return (
             <div>
                 <p>{getTodaysDate()}</p>

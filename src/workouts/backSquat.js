@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import backSquatGif from '../img/backsquat.gif';
 import { getTodaysDate } from '../Home';
 
@@ -7,22 +7,18 @@ export function BackSquat() {
     const [reps, setReps] = useState("");
     const [sets, setSets] = useState("");
 
-    const [caloriesBurned, setCaloriesBurned] = useState("");
     const [summary, setSummary] = useState("");
 
 
-    useEffect(() => {
-        setCaloriesBurned(weight * reps * 3.5 * 0.0003238315 * 0.707 * sets);
-    }, [weight, reps, sets]);
-
-
     function getSummary() {
+        const caloriesBurned = weight * reps * 3.5 * 0.0003238315 * 0.707 * sets;
+
         return (
             <div>
                 <p>{getTodaysDate()}</p>
                 <p>{`Today you did ${sets} sets of ${reps} reps of bench press at ${weight} lbs.`}</p>
                 <p>{`\u{1F525}Today you burned ${caloriesBurned} Calories!\u{1F525}`}</p>
-                <img src={backSquatGif} alt="bench press gif" />
+                <img src={backSquatGif} alt="back squat gif" />
             </div>
         );
     }
