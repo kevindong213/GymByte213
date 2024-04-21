@@ -9,7 +9,8 @@ export function Home() {
     const [sportsToggle, setSportsToggle] = useState(false);
 
     return (
-        <div>
+        <div
+            class="container">
             <div class="title-image">
                 <img src={arm} alt="GymByte" width="117.5" height="160" />
                 <h1>GymByte</h1>
