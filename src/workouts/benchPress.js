@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import benchPressGif from '../img/benchpress.gif';
+import { getTodaysDate } from '../Home';
 
 export function BenchPress() {
     const [weight, setWeight] = useState("");
@@ -9,6 +10,7 @@ export function BenchPress() {
 
     const [summary, setSummary] = useState("");
 
+
     useEffect(() => {
         setCaloriesBurned(weight / 150 * 5 * reps * sets);
     }, [weight, reps, sets]);
@@ -17,6 +19,7 @@ export function BenchPress() {
     function getSummary() {
         return (
             <div>
+                <p>{getTodaysDate()}</p>
                 <p>{`Today you did ${sets} sets of ${reps} reps of bench press at ${weight} lbs.`}</p>
                 <p>{`\u{1F525}Today you burned ${caloriesBurned} Calories!\u{1F525}`}</p>
                 <img src={benchPressGif} alt="bench press gif" />
