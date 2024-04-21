@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Workout } from './activity/workout';
-import { Sports } from './activity/sports';
+import { Workout } from './activities/workout';
+import { Sports } from './activities/sports';
 import arm from './img/arm.png';
 import './styles/styles.css'; // Import your CSS file
 
