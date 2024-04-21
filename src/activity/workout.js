@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Treadmill from '../workouts/treadmill';
 import BenchPress from '../workouts/benchPress';
-import LegPress from '../workouts/legPress';
+import LegPress from '../workouts/backSquat';
 
 export function Workout() {
     const [treadmillToggle, setTreadmillToggle] = useState(true);
@@ -34,7 +34,7 @@ export function Workout() {
             <select name="exercises" onChange={updateToggle}>
                 <option value="treadmill">treadmill</option>
                 <option value="benchPress">bench press</option>
-                <option value="legPress">leg press</option>
+                <option value="legPress">back squat</option>
             </select>
 
             {treadmillToggle && <Treadmill />}

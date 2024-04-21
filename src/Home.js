@@ -45,12 +45,6 @@ export function Home() {
                 &&
                 <Sports />
             }
-
-
-
-            {/* treadmill: speed, time */}
-            {/* bench press: reps, sets, weight */}
-            {/* leg press: reps, sets, weight */}
         </div>
     );
 }
