@@ -11,7 +11,7 @@ export function Treadmill() {
 
 
     function getSummary() {
-        const caloriesBurned = 0; // FIXME
+        const caloriesBurned = ((0.1 * speed) + (1.8 * speed * incline) + 3.5) * minutes;
 
         return (
             <div>

@@ -11,7 +11,7 @@ export function BackSquat() {
 
 
     function getSummary() {
-        const caloriesBurned = weight * reps * 3.5 * 0.0003238315 * 0.707 * sets;
+        const caloriesBurned = 0.32 * weight / 25  * sets * reps;
 
         return (
             <div>
